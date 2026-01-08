@@ -1,0 +1,25 @@
+[user]
+	name = Mikita Pridorozhko
+	email = nick.pridorozhko@gmail.com
+	signingkey = 115E2F30EFBF15F2
+[core]
+	excludesfile = /Users/mikita/.gitignore
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[credential]
+	helper = osxkeychain
+[pull]
+	ff = only
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
